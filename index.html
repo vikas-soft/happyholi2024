@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>!! Happy Holi !!</title>
+    <link rel="stylesheet" href="holi2024.css">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Tangerine">
+</head>
+<body>
+    <h3>!! Happy Holi 2024 !!</h3>
+
+    <script>
+        let images = [
+        'url("png8.png")',
+        'url("png8.png")',
+        'url("png8.png")',
+        'url("png8.png")',
+        'url("png8.png")'
+        ];
+
+        let body = document.querySelector('body');
+        body.onclick = function(event){
+            let x = event.pageX - event.target.offsetLeft;
+            let y = event.pageY - event.target.offsetTop;
+
+            let splash = document.createElement('span');
+            splash.style.left = x + 'px';
+            splash.style.top = y + 'px';
+
+            let bg = images[Math.floor(Math.random()*images.lenght)];
+            splash.style.backgroundImage = bg;
+
+            this.appendChild(splash);
+
+            setTimeout(() =>{
+                splash.remove()
+            },4000);
+        }
+    </script>
+</body>
+</html>
